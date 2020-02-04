@@ -1,4 +1,5 @@
 class animals:
+
     name = ''
     weight = 0
 
@@ -10,7 +11,7 @@ class animals:
 
     def animal_sound(self, sound):
         old_str = "'>"
-        print(f"{sound}! This is sound of {str(type(self)).replace(old_str, '')[17:]} {self.name}")
+        print(f"{sound}! This is sound of {str(type(self)).replace(old_str, '')[17:]} {self.name}\n")
 
 
 class goose(animals):
@@ -60,9 +61,10 @@ Goose1.animal_sound('G-g-g-g-g')
 Goose2 = goose()
 Goose2.name = 'White'
 Goose2.weight = 11
+Goose2.laid_egg()
 Goose2.animal_sound('Ga-ga-ga')
 
-Cow1 = cow('Buryonka', 240)
+Cow1 = cow('Buryonka', 110)
 print(f'I am cow {Cow1.name}, my weight = {Cow1.weight} kg')
 Cow1.to_milk()
 Cow1.animal_sound('Muuuuuu')
@@ -70,25 +72,52 @@ Cow1.animal_sound('Muuuuuu')
 Sheep1 = sheep()
 Sheep1.name = 'Lamb'
 Sheep1.weight = 30
-Sheep1.animal_sound('Be-e-e-e-e-e')
 Sheep1.shear()
+Sheep1.animal_sound('Be-e-e-e-e-e')
+
 
 Sheep2 = sheep()
 Sheep2.name = 'Curly'
 Sheep2.weight = 32
-Sheep2.animal_sound('Be-be-be-be')
+Sheep2.shear()
 Sheep2.feed()
+Sheep2.animal_sound('Be-be-be-be')
 
 Chicken1 = chicken()
 Chicken1.name = 'Co-co'
 Chicken1.weight = 5
-Chicken1.animal_sound('Cocococo')
 Chicken1.laid_egg()
+Chicken1.animal_sound('Cocococo')
 
 Chicken2 = chicken()
 Chicken2.name = 'Kukareku'
 Chicken2.weight = 4
-Chicken2.animal_sound('Ku-ka-re-ku')
 Chicken2.clean_up()
+Chicken2.laid_egg()
+Chicken2.animal_sound('Ku-ka-re-ku')
 
 Goat1 = goat()
+Goat1.name = 'Horns'
+Goat1.weight = 18
+Goat1.shear()
+Goat1.to_milk()
+Goat1.animal_sound('Me-e-e-e-e-e-e-e')
+
+Goat2 = goat()
+Goat2.name = 'Hooves'
+Goat2.weight = 16
+Goat2.shear()
+Goat2.to_milk()
+Goat2.animal_sound('Me-me-me-me-me-me')
+
+Duck1 = duck()
+Duck1.name = 'Kryakva'
+Duck1.weight = 4
+Duck1.laid_egg()
+Duck1.feed()
+Duck1.animal_sound('quack-quack')
+
+my_tuple = []
+my_tuple = animals.__subclasses__()
+print(goose.__repr__())
+print(my_tuple)
