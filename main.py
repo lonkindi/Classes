@@ -1,7 +1,17 @@
 class animals:
+    animal_list = list()
 
-    name = ''
-    weight = 0
+    @staticmethod
+    def added_animal(n, w):
+        animals.animal_list.append((n,w))
+
+
+
+    def __init__(self, name, weight):
+        self.name = name
+        self.weight = weight
+
+
 
     def feed(self):
         print(f"I'm {self.name}. Good! I am full!")
@@ -20,10 +30,6 @@ class goose(animals):
 
 
 class cow(animals):
-    def __init__(self, name='', weight=0):
-        self.name = name
-        self.weight = weight
-
     def to_milk(self):
         print('Milk a cow.')
 
@@ -51,16 +57,12 @@ class duck(animals):
         print('It is a duck eggs.')
 
 
-Goose1 = goose()
-Goose1.name = 'Gray'
-Goose1.weight = 9
+Goose1 = goose('Gray', 9)
 Goose1.laid_egg()
 Goose1.clean_up()
 Goose1.animal_sound('G-g-g-g-g')
 
-Goose2 = goose()
-Goose2.name = 'White'
-Goose2.weight = 11
+Goose2 = goose('White', 11)
 Goose2.laid_egg()
 Goose2.animal_sound('Ga-ga-ga')
 
@@ -69,55 +71,37 @@ print(f'I am cow {Cow1.name}, my weight = {Cow1.weight} kg')
 Cow1.to_milk()
 Cow1.animal_sound('Muuuuuu')
 
-Sheep1 = sheep()
-Sheep1.name = 'Lamb'
-Sheep1.weight = 30
+Sheep1 = sheep('Lamb', 30)
 Sheep1.shear()
 Sheep1.animal_sound('Be-e-e-e-e-e')
 
-
-Sheep2 = sheep()
-Sheep2.name = 'Curly'
-Sheep2.weight = 32
+Sheep2 = sheep('Curly', 32)
 Sheep2.shear()
 Sheep2.feed()
 Sheep2.animal_sound('Be-be-be-be')
 
-Chicken1 = chicken()
-Chicken1.name = 'Co-co'
-Chicken1.weight = 5
+Chicken1 = chicken('Co-co', 5)
 Chicken1.laid_egg()
 Chicken1.animal_sound('Cocococo')
 
-Chicken2 = chicken()
-Chicken2.name = 'Kukareku'
-Chicken2.weight = 4
+Chicken2 = chicken('Kukareku', 4)
 Chicken2.clean_up()
 Chicken2.laid_egg()
 Chicken2.animal_sound('Ku-ka-re-ku')
 
-Goat1 = goat()
-Goat1.name = 'Horns'
-Goat1.weight = 18
+Goat1 = goat('Horns', 18)
 Goat1.shear()
 Goat1.to_milk()
 Goat1.animal_sound('Me-e-e-e-e-e-e-e')
 
-Goat2 = goat()
-Goat2.name = 'Hooves'
-Goat2.weight = 16
+Goat2 = goat('Hooves', 16)
 Goat2.shear()
 Goat2.to_milk()
 Goat2.animal_sound('Me-me-me-me-me-me')
 
-Duck1 = duck()
-Duck1.name = 'Kryakva'
-Duck1.weight = 4
+Duck1 = duck('Kryakva', 4)
 Duck1.laid_egg()
 Duck1.feed()
 Duck1.animal_sound('quack-quack')
 
-my_tuple = []
-my_tuple = animals.__subclasses__()
-print(goose.__repr__())
-print(my_tuple)
+print(animals.animal_list)
