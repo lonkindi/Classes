@@ -10,6 +10,7 @@ class animals:
     def __init__(self, name, weight):
         self.name = name
         self.weight = weight
+        self.added_animal(name,weight)
 
 
 
